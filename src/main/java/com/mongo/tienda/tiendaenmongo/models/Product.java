@@ -15,14 +15,17 @@ public class Product {
 
     public String stock;
 
+    public String provider;
+
     public Product(){}
 
-    public Product(String id, String name, String description, String price, String stock) {
+    public Product(String id, String name, String description, String price, String stock, String provider) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.stock = stock;
+        this.provider = provider;
     }
 
     @Override
@@ -33,6 +36,7 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", price='" + price + '\'' +
                 ", stock='" + stock + '\'' +
+                ", provider='" + provider + '\'' +
                 '}';
     }
 }
