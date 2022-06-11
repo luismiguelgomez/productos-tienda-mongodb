@@ -3,10 +3,7 @@ package com.mongo.tienda.tiendaenmongo.controllers;
 import com.mongo.tienda.tiendaenmongo.models.Product;
 import com.mongo.tienda.tiendaenmongo.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +18,11 @@ public class ProductController {
     @CrossOrigin(origins = "http://localhost:8081")
     public List<Product> getAllOrders(){
         return productRepository.findAll();
+    }
+
+    @RequestMapping(value = "/insert_product", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:8081")
+    public Product insertProduct(@RequestBody Product product){
+        return productRepository.insert(product);
     }
 }

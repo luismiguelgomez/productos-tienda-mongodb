@@ -17,15 +17,18 @@ public class Product {
 
     public String provider;
 
+    public String url;
+
     public Product(){}
 
-    public Product(String id, String name, String description, String price, String stock, String provider) {
+    public Product(String id, String name, String description, String price, String stock, String provider, String url) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.stock = stock;
         this.provider = provider;
+        this.url = url;
     }
 
     @Override
@@ -37,6 +40,7 @@ public class Product {
                 ", price='" + price + '\'' +
                 ", stock='" + stock + '\'' +
                 ", provider='" + provider + '\'' +
+                ", url='" + url + '\'' +
                 '}';
     }
 }
