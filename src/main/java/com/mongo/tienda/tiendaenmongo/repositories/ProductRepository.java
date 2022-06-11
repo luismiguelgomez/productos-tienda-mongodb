@@ -7,10 +7,15 @@ import java.util.Optional;
 
 public interface ProductRepository extends MongoRepository<Product, String> {
 
+    public Product insert(Product product);
+
+
+
     /**
      * Consulta utilizada para buscar por id
      * @param id tipo string el cual sera buscado
      * @return un objeto tipo orden
      */
+
     public Optional<Product> findById(String id);
 }
